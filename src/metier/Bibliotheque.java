@@ -2,11 +2,11 @@ package metier;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
+
 
 public class Bibliotheque {
     private ArrayList<Document> documents;
-    private Map<String, Document> documentsMap;
+    private HashMap<String, Document> documentsMap;
 
     public Bibliotheque() {
         documents = new ArrayList<>();

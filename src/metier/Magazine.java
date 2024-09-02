@@ -30,6 +30,6 @@ public class Magazine extends Document {
 
     @Override
     public void afficherDetails() {
-        System.out.printf("| %-30s | %-20s | Numéro: %-8d | %-15s | % Magazine|\n", getTitre(), getAuteur(), numero, getDatePublication());
+        System.out.printf("| %-30s | %-20s | Numéro: %-8d | %-15s | Magazine|\n", getTitre(), getAuteur(), numero, getDatePublication());
     }
 }
