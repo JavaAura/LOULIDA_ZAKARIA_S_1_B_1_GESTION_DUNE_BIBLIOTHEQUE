@@ -12,13 +12,11 @@ public class ConsoleUI {
     private Bibliotheque bibliotheque;
     private Scanner scanner;
 
-
-
-
     public ConsoleUI() {
         bibliotheque = new Bibliotheque();
         scanner = new Scanner(System.in);
     }
+
     public void demarrer() {
         int choix = -1; // Initialize with an invalid value
         do {
@@ -55,7 +53,6 @@ public class ConsoleUI {
             }
         } while (choix != 6);
     }
-
 
     private void afficherMenu() {
         System.out.println("Menu:");
@@ -118,26 +115,10 @@ public class ConsoleUI {
         }
 
         if (type == 1) {
-            System.out.print("ISBN : ");
-            String isbn = scanner.nextLine();
+            String isbn = InputValidator.obtenirISBNValide(scanner);
             bibliotheque.ajouterDocument(new Livre(titre, auteur, datePublication, nombreDePages, isbn));
         } else if (type == 2) {
-            int numero;
-            while (true) {
-                System.out.print("Numéro : ");
-                if (scanner.hasNextInt()) {
-                    numero = scanner.nextInt();
-                    scanner.nextLine();
-                    if (numero > 0) {
-                        break;
-                    } else {
-                        System.out.println("Le numéro doit être supérieur à zéro.");
-                    }
-                } else {
-                    System.out.println("Veuillez entrer un nombre valide.");
-                    scanner.next();
-                }
-            }
+            int numero = InputValidator.obtenirNumeroValide(scanner);
             bibliotheque.ajouterDocument(new Magazine(titre, auteur, datePublication, nombreDePages, numero));
         }
     }
@@ -169,6 +150,3 @@ public class ConsoleUI {
         app.demarrer();
     }
 }
-
-
-
