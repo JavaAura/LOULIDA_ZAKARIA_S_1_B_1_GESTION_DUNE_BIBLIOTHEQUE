@@ -10,7 +10,7 @@ public abstract class Document {
     private String auteur;
     private LocalDate datePublication;
     private int nombreDePages;
-
+    private boolean emprunte;
     public Document(String titre, String auteur, LocalDate datePublication, int nombreDePages) {
         this.id = genererIdUnique();
         this.titre = titre;
@@ -58,6 +58,20 @@ public abstract class Document {
     public void setNombreDePages(int nombreDePages) {
         this.nombreDePages = nombreDePages;
     }
+
+    public void setEmprunte(boolean emprunte) {
+        this.emprunte = emprunte;
+    }
+
+    public boolean isEmprunte() {
+        return emprunte;
+    }
+
+
+
+
+
+
 
     public abstract void emprunter();
     public abstract void retourner();
