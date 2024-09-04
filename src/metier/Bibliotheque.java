@@ -70,12 +70,7 @@ public class Bibliotheque {
         }
         System.out.println("+--------------------------------+----------------------+------------------+-----------------+-----------------+");
     }
-
-
-
     }
-
-
     //there another way to loop through collections, like ArrayList and HashSet.
     // it's an object who have this  hasNext() and next() methods :
 
@@ -93,8 +88,6 @@ public class Bibliotheque {
 //
 //        System.out.println("+--------------------------------+----------------------+------------------+-----------------+-----------------+");
 //    }
-
-
     public void rechercherDocument(String query) {
         boolean found = false;
         for (Document doc : documents) {
